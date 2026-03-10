@@ -8,17 +8,15 @@ type NavProps = {
     link: string;
 };
 
-// Toggle Code From :
-// https://dev.to/abbeyperini/toggle-dark-mode-in-react-28c9
 import { useState } from 'react';
 
 export default function Nav({ link }: NavProps) {
     const [isLight, setIsLight] = useState(true);
     const toggleDarkMode = () => {
-        if (isLight) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        } else {
+        if (document.documentElement.getAttribute('data-theme') == 'dark') {
             document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
         }
         setIsLight(() => !isLight)
     };

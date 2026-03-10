@@ -37,7 +37,7 @@
     "**/*.mts",
     "dist/types/**/*.ts",
     "dist/dev/types/**/*.ts"
-  ],
+, "app/themes.js"  ],
   "exclude": [
     "node_modules"
   ]
