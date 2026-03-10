@@ -46,24 +46,6 @@ nav a {
   border-radius: 5px;
 }
 
-nav a:hover {
-  animation: hover-link 750ms ease-in-out forwards,
-    gradient 4s ease-in infinite;
-}
-
-@keyframes hover-link {
-  from {
-    color: var(--light-bold);
-    background-color: var(--splash);
-  }
-  to {
-    color: var(--splash);
-    background-image: linear-gradient(to left, var(--medium-bold), var(--light-bold), var(--background));
-    background-size: 400% auto;
-    box-shadow: 3px 3px #041b38a2;
-  }
-}
-
 /***********************  Footer Section   **************************/
 footer {
   color: var(--subheading);
@@ -86,10 +68,6 @@ footer a {
 
 footer a:visited {
   color: var(--subheading);
-}
-
-#footerContactLink:hover {
-  animation: show-link 350ms ease-in forwards;
 }
 
 /*********** Splash Page ************************/
@@ -119,50 +97,8 @@ header h1 {
   margin: 10px 0;
   white-space: nowrap;
   border-right: 3px solid var(--background);
-  animation: show-letters 2800ms steps(18) forwards,
-    show-blinking 700ms 2800ms 4 forwards,
-    gradient 3s linear infinite;
-  interpolate-size: allow-keywords;
   padding-right: 0.125em;
   font-size: 2.5em;
-}
-
-@keyframes show-letters {
-  0% {
-    width: 0;
-  }
-
-  100% {
-    width: auto;
-  }
-}
-
-@keyframes show-blinking {
-  0% {
-    border-color: transparent;
-  }
-
-  50% {
-    border-color: var(--background);
-  }
-
-  100% {
-    border-color: transparent;
-  }
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 header img {
@@ -263,22 +199,6 @@ section a {
   font-weight: bold;
 }
 
-section a:hover {
-  animation: show-link 150ms ease forwards;
-}
-
-@keyframes show-link {
-  0% {
-    color: var(--subheading);
-  }
-
-  100% {
-    /* background-color: rgba(var(--light-bold), 0.8); */
-    background-color: rgba(var(--light-bold), 0.8);
-    color: var(--subheading);
-  }
-}
-
 /**************   Projects   *****************/
 .three-col {
   display: grid;
@@ -309,20 +229,6 @@ section a:hover {
   position: relative;
   display: flex;
   flex-direction: column;
-}
-
-.card:hover {
-  animation: hover 250ms linear forwards;
-}
-
-@keyframes hover {
-  from {
-    bottom: 0px;
-  } to {
-    bottom: 10px;
-    box-shadow: 0 8px 8px #041b38a8;
-    background: linear-gradient(-45deg, var(--background-shadow), var(--background), var(--background));
-  }
 }
 
 .card ul li {
@@ -363,16 +269,12 @@ section a:hover {
   background-color: var(--background);
   border: 1px solid var(--background-shadow);
   border-radius: 16px;
-  box-shadow: 0 5px 5px #041b387e;
+  box-shadow: 0 5px 5px rgba(var(--background-shadow), 0.3);
   margin: 20px auto;
   width: 50vw;
   max-width: 500px;
   height: 45vh;
   padding: 20px;
-}
-
-.one-col:hover {
-  animation: hover 350ms ease-in-out forwards;
 }
 
 #contact-me {
@@ -421,20 +323,4 @@ button {
   width: 100%;
   margin: 0 auto;
   border-color: var(--dark-bold);
-}
-
-button:hover {
-  animation: change-color 250ms ease-out forwards;
-}
-
-@keyframes change-color {
-  0% {
-    background-color: var(--splash);
-    color: var(--dark-bold)
-  }
-
-  100% {
-    color: var(--splash);
-    background-color: var(--dark-bold);
-  }
 }
