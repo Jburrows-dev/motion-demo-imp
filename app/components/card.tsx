@@ -16,7 +16,7 @@ export default function Card({ src, alt, title, description }: CardProps) {
             <img src={baseImgPath + src} alt={alt} />
             <ul>
               {description.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
         </div>
