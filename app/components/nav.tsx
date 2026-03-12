@@ -5,12 +5,14 @@ const baseImgPath = process.env.NODE_ENV == 'development'
     : '/motion-demo'; 
 
 type NavProps = {
-    link: string;
+    link: string,
+    about: boolean,
 };
 
 import { useState } from 'react';
+import { motion } from 'motion/react';
 
-export default function Nav({ link }: NavProps) {
+export default function Nav({ link, about }: NavProps) {
     const [isLight, setIsLight] = useState(true);
     const toggleDarkMode = () => {
         if (document.documentElement.getAttribute('data-theme') == 'dark') {
@@ -18,19 +20,27 @@ export default function Nav({ link }: NavProps) {
         } else {
             document.documentElement.setAttribute('data-theme', 'dark');
         }
-        setIsLight(() => !isLight)
+        setIsLight(isLight => !isLight)
     };
     return(
         <div>
             <nav>
-            <p><Link href={link}>Contact Po Ping</Link></p>
-            <button
-                className="toggleContainerOn"
+            <motion.p whileTap={ { scale: 0.9} }>
+                <Link href={link}>{about ? "Contact" : "About"} Po Ping</Link>
+            </motion.p>            <button 
                 style={{
                     justifyContent: "flex-" + (isLight ? "start" : "end"),
                 }}
                 onClick={toggleDarkMode}> 
-                <div className="toggleBall"/>
+                <motion.div 
+                    className="toggleBall"
+                    layout
+                    transition = {{
+                        type: "spring",
+                        stiffness: 700,
+                        damping: 50,
+                    }}
+                />
             </button>
             </nav>
         </div>
